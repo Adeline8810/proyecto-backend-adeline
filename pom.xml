@@ -5,7 +5,6 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- ✅ Usa una versión estable de Spring Boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -20,7 +19,7 @@
     <description>Proyecto backend con Spring Boot</description>
 
     <properties>
-        <java.version>17</java.version> <!-- Usa tu versión de Java instalada (17 o 21) -->
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -42,7 +41,7 @@
             <artifactId>mysql-connector-j</artifactId>
         </dependency>
 
-        <!-- Para probar (opcional) -->
+        <!-- Para pruebas (opcional) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -52,13 +51,21 @@
 
     <build>
         <plugins>
-            <!-- ✅ Plugin correcto de Spring Boot -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.2.5</version>
-            <configuration>
-                <skipTests>true</skipTests>
-            </configuration>
+            <!-- Plugin para Spring Boot -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- Plugin para saltar tests en Clever Cloud -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
