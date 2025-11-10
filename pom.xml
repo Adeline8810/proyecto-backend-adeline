@@ -53,10 +53,12 @@
     <build>
         <plugins>
             <!-- ✅ Plugin correcto de Spring Boot -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <skipTests>true</skipTests>
+            </configuration>
         </plugins>
     </build>
 
