@@ -8,7 +8,8 @@ import com.demo.adeline.repository.UsuarioRepository;
 
 import java.util.List;
 
-@CrossOrigin(origins = "${FRONTEND_URL:http://localhost:4200}")
+//@CrossOrigin(origins = "${FRONTEND_URL:http://localhost:4200}")
+@CrossOrigin(origins = "https://bespoke-paletas-5c7c73.netlify.app")
 @RestController
 @RequestMapping("/api/usuarios")
 
